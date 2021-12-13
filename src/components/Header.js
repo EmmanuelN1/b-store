@@ -1,3 +1,4 @@
+import Link from "next/link"
 import Image from "next/image";
 import logo from "../assets/logo.png";
 import {
@@ -5,13 +6,11 @@ import {
     SearchIcon,
     ShoppingCartIcon,
 } from "@heroIcons/react/outline";
-import {useHistory} from "react"
 
 
 
 function Header() {
 
-    const history = useHistory();
     return(
         <header>
             {/* Top Div */}
@@ -38,13 +37,15 @@ function Header() {
 
 
                 {/*Right */}
-                <div onClick={signIn} className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
+                <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
 
-                    <div className="link">
-                        <p>Hello,Nzeakor Emmanuel</p>
-                        <p className="font-extrabold md:text-sm">Sign Out</p>
-                    </div>
-
+                   <Link href="/SignIn"> 
+                        <div className="link">
+                            <p>Hello,Nzeakor Emmanuel</p>
+                        
+                                <p className="font-extrabold md:text-sm">Sign Out</p>
+                        </div>
+                    </Link>
                     <div className="link">
                         <p>Returns</p>
                         <p className="font-extrabold md:text-sm">& Orders</p>

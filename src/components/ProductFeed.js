@@ -17,7 +17,7 @@ function ProductFeed({products}) {
             </div>
 
              
-             {products.slice(6,products.length-1).map(({id,title, price, description, category, image}) => (
+             {products.slice(6,products.length -4).map(({id,title, price, description, category, image}) => (
                 <Product key={id} title={title} price={price} description={description} category={category} image={image}/> 
             ))}
 

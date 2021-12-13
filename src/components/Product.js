@@ -33,8 +33,8 @@ function Product({id,title, price, description, category, image}) {
             
             <div className="mb-5">
                 {/* Currency library */}
-                <Currency quantity={price *570 } currency="NGN"/>
-            </div>
+                <Currency quantity={price * 57 } currency="NGN"/>
+                </div>
 
             {
                 prime && (
