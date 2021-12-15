@@ -1,16 +1,25 @@
-import Link from "next/link"
 import Image from "next/image";
 import logo from "../assets/logo.png";
+import {useRouter} from "next/router"
 import {
     MenuIcon,
     SearchIcon,
     ShoppingCartIcon,
 } from "@heroIcons/react/outline";
+import {auth} from "../firebase";
+
 
 
 
 function Header() {
 
+    const router = useRouter();
+
+    const signOut = () => {
+        auth.signOut()
+        router.push("/signIn")
+
+    }
     return(
         <header>
             {/* Top Div */}
@@ -39,13 +48,12 @@ function Header() {
                 {/*Right */}
                 <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
 
-                   <Link href="/SignIn"> 
                         <div className="link">
-                            <p>Hello,Nzeakor Emmanuel</p>
+                            <p>Hello</p>
                         
-                                <p className="font-extrabold md:text-sm">Sign Out</p>
+                                <p className="font-extrabold md:text-sm" onClick={signOut} >Sign Out</p>
                         </div>
-                    </Link>
+                    
                     <div className="link">
                         <p>Returns</p>
                         <p className="font-extrabold md:text-sm">& Orders</p>
@@ -84,3 +92,5 @@ function Header() {
 }
 
 export default Header;
+
+
