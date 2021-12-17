@@ -2,8 +2,13 @@ import Head from "next/head";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
 import ProductFeed from "../components/ProductFeed";
+import SignIn from "../pages/signIn"
+import {signIn, signOut, useSession} from "next-auth/react";
+import axios from "axios"
+
 
 export default function Home({products}) {
+  const {data: session} = useSession()
   return (
     <div className="bg-gray-100">
 
@@ -28,7 +33,7 @@ export default function Home({products}) {
 
 export async function getServerSideProps(context) {
   //feteching data from FakeStore Api
-  const products  = await fetch("https://fakestoreapi.com/products").then((res) => res.json());
+  const products  = await axios.get("https://fakestoreapi.com/products").then(res => console.log(res))
 
   return {
     props: {

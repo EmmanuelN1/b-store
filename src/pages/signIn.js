@@ -8,7 +8,6 @@ import {useRouter} from "next/router"
 function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const router = useRouter();
 
     const signIn = (e) => {
@@ -30,7 +29,7 @@ function SignIn() {
                         src={logo} alt="logo"/>
 
 
-            <div objectFit="contain" width={300} className="flex  flex-col h-fit rounded-md border border-black p-2 mt-5">
+            <div objectFit="contain" width={300} className="flex  flex-col h-fit rounded-md border border-black p-2 mt-5 ">
                 
                 <h1 className="mb-2 font-medium ">Sign In</h1>
                 
