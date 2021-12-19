@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import ProductFeed from "../components/ProductFeed";
 import SignIn from "../pages/signIn"
 import {signIn, signOut, useSession} from "next-auth/react";
-import axios from "axios"
+
 
 
 export default function Home({products}) {
@@ -33,7 +33,7 @@ export default function Home({products}) {
 
 export async function getServerSideProps(context) {
   //feteching data from FakeStore Api
-  const products  = await axios.get("https://fakestoreapi.com/products").then(res => console.log(res))
+  const products  = await fetch("https://fakestoreapi.com/products").then(res => res.json())
 
   return {
     props: {

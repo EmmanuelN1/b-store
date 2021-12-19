@@ -6,6 +6,6 @@ rerun your server
 
 module.exports = {
     images: {
-        domains: ["links.papareact.com","fakestoreapi.com", ]
+        domains: ["links.papareact.com","fakestoreapi.com ", ]
     }
 }
