@@ -13,6 +13,7 @@
     "axios": "^0.24.0",
     "firebase": "^8.10.0",
     "firebase-admin": "^9.8.0",
+    "heroicons": "^1.0.5",
     "next": "latest",
     "next-auth": "^4.0.5",
     "react": "17.0.1",
