@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Banner from "./banner";
-import Header from "./header";
-import ProductFeed from "./productFeed";
+import Banner from "../components/Banner";
+import Header from "../components/Header";
+import ProductFeed from "../components/ProductFeed";
 import SignIn from "../pages/signIn"
 import {signIn, signOut, useSession} from "next-auth/react";
 
