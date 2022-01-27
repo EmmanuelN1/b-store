@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
-import { StarIcon } from "@heroIcons/react/solid";
+import { StarIcon } from "@heroicons/react/solid";
 import Currency from "react-currency-formatter";
+import {useDispatch} from "react-redux";
 
 function Product({id,title, price, description, category, image}) {
     const MAX_RATING = 5;
@@ -13,6 +14,10 @@ function Product({id,title, price, description, category, image}) {
     );
     
     const [prime, setPrime] = useState(Math.random() < 0.5);
+
+    const addProductToBasket = () => {
+
+    }
     
     return (
         <div className="relative flex flex-col m-5 bg-white z-30 
@@ -45,7 +50,7 @@ function Product({id,title, price, description, category, image}) {
                 )
             }
 
-            <button className="mt-auto white button">Add To Basket</button>
+            <button onClick={addProductToBasket} className="mt-auto white button">Add To Basket</button>
         </div>
     )
 }

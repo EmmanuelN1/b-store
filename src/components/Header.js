@@ -11,7 +11,7 @@ import {signIn, signOut, useSession} from "next-auth/react";
 
 
 function Header() {
-    const {data: session} = useSession()
+    const {data: session} = useSession();
     const router = useRouter();
 
 
@@ -47,7 +47,7 @@ function Header() {
                 <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
 
                         <div className="link">
-                            <p>{session ? `Hello, ${session.user.name}` : ""}</p>
+                            <p>Hello User</p>
                         
                                 <p className="font-extrabold md:text-sm" onClick={signOut} >Sign Out</p>
                         </div>
