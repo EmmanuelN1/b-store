@@ -18,7 +18,6 @@ function Signup() {
              //it returns an auth which means it successfully created a user
 
              if(auth) {
-                 console.log(auth)
                  alert("Successful");
                 router.push("/signIn")
              }

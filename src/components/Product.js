@@ -3,11 +3,14 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import Currency from "react-currency-formatter";
 import {useDispatch} from "react-redux";
+import {addToBasket} from "../slices/basketSlice"
 
 function Product({id,title, price, description, category, image}) {
     const MAX_RATING = 5;
     const MIN_RATING = 1;
     const userId = id;
+
+    const dispatch = useDispatch();
 
     const [rating, setRating] = useState(
         Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING 
@@ -16,7 +19,17 @@ function Product({id,title, price, description, category, image}) {
     const [prime, setPrime] = useState(Math.random() < 0.5);
 
     const addProductToBasket = () => {
+        const product = {
+            id,
+            title,
+            price,
+            description,
+            category,
+            image
+        }
 
+        //sending / dispatching the product as an action to redux store
+        dispatch(addToBasket(product));
     }
     
     return (
@@ -38,7 +51,7 @@ function Product({id,title, price, description, category, image}) {
             
             <div className="mb-5">
                 {/* Currency library */}
-                <Currency quantity={price * 57 } currency="NGN"/>
+                <Currency quantity={price * 160 } currency="NGN"/>
                 </div>
 
             {

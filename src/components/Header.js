@@ -8,12 +8,13 @@ import {
 } from "@heroIcons/react/outline";
 import {auth} from "../firebase";
 import {signIn, signOut, useSession} from "next-auth/react";
-
+import { selectItems } from "../slices/basketSlice";
+import { useSelector } from "react-redux";
 
 function Header() {
     const {data: session} = useSession();
     const router = useRouter();
-
+    const items = useSelector(selectItems);
 
     const signOut = () => {
         auth.signOut()
@@ -31,7 +32,7 @@ function Header() {
                         onClick={() => router.push("/") }
                         src={logo}
                         width={150}
-                        height={40}
+                        height={60}
                         objectFit="contain"
                         className="cursor-pointer"
                     />
@@ -59,7 +60,7 @@ function Header() {
 
                     <div onClick={() => router.push('/checkout')}   
                         className="relative link flex items-center">
-                        <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-red-500 text-center rounded-full text-black font-bold"> 0 </span>
+                        <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-red-500 text-center rounded-full text-black font-bold"> {items.length} </span>
                         <ShoppingCartIcon className="h-10"/>
                         <p className="hidden md:inline  mt-2 font-extrabold md:text-sm ">Basket</p>
                     </div>
