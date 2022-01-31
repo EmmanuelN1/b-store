@@ -8,7 +8,7 @@ import {addToBasket} from "../slices/basketSlice"
 function Product({id,title, price, description, category, image}) {
     const MAX_RATING = 5;
     const MIN_RATING = 1;
-    const userId = id;
+
 
     const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ function Product({id,title, price, description, category, image}) {
         Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING 
     );
     
-    const [prime, setPrime] = useState(Math.random() < 0.5);
+    const [prime, setPrime] = useState(Math.random() < 0.1);
 
     const addProductToBasket = () => {
         const product = {
@@ -24,8 +24,10 @@ function Product({id,title, price, description, category, image}) {
             title,
             price,
             description,
+            rating,
             category,
-            image
+            image,
+            prime
         }
 
         //sending / dispatching the product as an action to redux store
@@ -51,7 +53,7 @@ function Product({id,title, price, description, category, image}) {
             
             <div className="mb-5">
                 {/* Currency library */}
-                <Currency quantity={price * 160 } currency="NGN"/>
+                <Currency quantity={price * 280 } currency="NGN"/>
                 </div>
 
             {

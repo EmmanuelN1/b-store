@@ -4,18 +4,21 @@ import Image from "next/image";
 import { useState } from "react";
 import {auth} from "../firebase";
 import {useRouter} from "next/router"
+import {useDispatch} from "react-redux";
+import {login} from "../slices/userSlice"
+
 
 function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
+    const dispatch = useDispatch();
 
     const signIn = (e) => {
         e.preventDefault();
         auth.signInWithEmailAndPassword(email, password).then( (auth) => {
             router.push('/')
         }).catch(error => alert(error.message))
-
        
     }
 

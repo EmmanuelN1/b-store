@@ -47,10 +47,10 @@ function Header() {
 
                 <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
 
-                        <div className="link">
+                        <div className="">
                             <p>Hello User</p>
                         
-                                <p className="font-extrabold md:text-sm" onClick={signOut} >Sign Out</p>
+                                <p className="link font-extrabold md:text-sm" onClick={signOut} >Sign Out</p>
                         </div>
                     
                     <div className="link">
