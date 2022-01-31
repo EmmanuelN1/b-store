@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import Header from "../components/Header";
-import {selectItems} from "../slices/basketSlice"
+import {selectItems, selectTotal} from "../slices/basketSlice"
 import CheckoutProduct from "../components/CheckoutProduct";
 import Currency from "react-currency-formatter";
 import {useSession} from "next-auth/react";
@@ -12,6 +12,7 @@ function Checkout () {
 
     const items = useSelector(selectItems);
     const {data: session} = useSession();
+    const total = useSelector(selectTotal);
 
     return (
         <div className="bg-gray-100">
@@ -47,12 +48,12 @@ function Checkout () {
 
                 {/*Right */}
 
-                <div >
+                <div className="flex flex-col bg-white p-10 shadow-md">
                         {items.length > 0 && (
                             <>
-                                <h2 className="whitespace-nowrap"> Subtotal({items.length} items): 
+                                <h2 className="whitespace-nowrap"> Subtotal({items.length} items): {" "}
                                     <span className="font-bold">
-                                    {/* <Currency quantity={price * 280 } currency="NGN"/> */}
+                                    <Currency quantity={total } currency="NGN"/>
                                     </span> 
                                 </h2>
 
