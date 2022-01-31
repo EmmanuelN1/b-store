@@ -5,7 +5,7 @@ import {
     MenuIcon,
     SearchIcon,
     ShoppingCartIcon,
-} from "@heroIcons/*";
+} from "@heroIcons";
 import {auth} from "../firebase";
 import {signIn, signOut, useSession} from "next-auth/react";
 import { selectItems } from "../slices/basketSlice";
