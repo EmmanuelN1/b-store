@@ -1,1 +1,1 @@
-# b-store
+An Ecommerce application that connects shoppers to products or services for trading online. this web app includes  technologies such as mobile commerce, electronic funds transfer, supply chain management, Internet marketing, online transaction processing, electronic data interchange (EDI), inventory management systems, and automated data collection systems
